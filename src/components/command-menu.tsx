@@ -9,7 +9,6 @@ import {
   DownloadIcon,
   LetterTextIcon,
   MoonStarIcon,
-  RssIcon,
   SunIcon,
   TextIcon,
   TriangleDashedIcon,
@@ -50,23 +49,7 @@ type CommandLinkItem = {
   openInNewTab?: boolean;
 };
 
-const MENU_LINKS: CommandLinkItem[] = [
-  {
-    title: "Daifolio",
-    href: "/",
-    icon: ChanhDaiMark,
-  },
-  {
-    title: "Blog",
-    href: "/blog",
-    icon: RssIcon,
-  },
-  {
-    title: "Components",
-    href: "/components",
-    icon: Icons.react,
-  },
-];
+const MENU_LINKS: CommandLinkItem[] = [];
 
 const DAIFOLIO_LINKS: CommandLinkItem[] = [
   {
