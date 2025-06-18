@@ -1,58 +1,35 @@
 export const USER = {
-  firstName: "Chánh Đại",
-  lastName: "Nguyễn",
-  displayName: "Chánh Đại",
-  username: "ncdai",
+  firstName: "Aditya",
+  lastName: "Singh",
+  displayName: "Aditya Singh",
+  username: "adityasingh",
   gender: "male",
-  bio: "Creating with code, driven by passion.",
-  flipSentences: [
-    "Software Developer",
-    "UI/UX Designer",
-    "Open Source Contributor",
-  ],
-  address: "Ho Chi Minh City, Viet Nam",
-  phoneNumber: "Kzg0Nzc3ODg4MTQ4", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
-  email: "ZGFpQGNoYW5oZGFpLmNvbQ==", // base64 encoded
-  website: "https://chanhdai.com",
-  otherWebsites: [
-    "https://dai.ng",
-    "https://dai.so",
-    "https://d.io.vn",
-    "https://d.id.vn",
-    "https://dai.io.vn",
-    "https://dai.id.vn",
-    "https://chanhdai.io.vn",
-    "https://chanhdai.id.vn",
-    "https://ncdai.vn",
-    "https://ncdai.net",
-    "https://dai.is-a.dev",
-  ],
-  dateOfBirth: "2000-08-14", // YYYY-MM-DD
-  jobTitle: "Software Developer & UI/UX Designer",
+  bio: "Building the future with Web2, Web3, and AI.",
+  flipSentences: ["Full-Stack Developer", "Web3 Explorer", "AI/ML Enthusiast"],
+  address: "India", // Optional: Base64-encoded phone in E.164 format, or leave empty
+  email: "YWRpeXRhc2luZ2hyYWpwdXQ3NTVAZ21haWwuY29t", // Optional: Base64-encoded email, or leave empty
+  website: "https://yourdomain.com", // Replace with your actual domain
+  otherWebsites: [], // Add personal blog, GitHub, etc. if any
+  dateOfBirth: "2006-04-11",
+  jobTitle: "Full-Stack Developer | Web3 & AI/ML Enthusiast",
   jobs: [
     {
-      title: "Senior Frontend Developer & UI Design Lead",
-      company: "Simplamo",
-      website: "https://simplamo.com?ref=IN-926722",
+      title: "Freelance Full-Stack Developer",
+      company: "Self-Employed",
+      website: "https://yourdomain.com", // Or GitHub, portfolio, etc.
     },
-    {
-      title: "Founder",
-      company: "Quaric",
-      website: "https://quaric.com",
-    },
+    // Add more jobs or internships if applicable
   ],
   about: `
-Hello, World! I am Chánh Đại — a Software Developer & UI/UX Designer passionate about creating high-performance, user-centric software solutions with intuitive and engaging designs.
+Hello, World! I’m Aditya Singh — a Software Developer passionate about building impactful Web2, Web3, and AI/ML solutions with clean code and user-friendly design.
 
-With 5+ years of experience, I specialize in building high-quality web and mobile applications using Next.js, React, TypeScript, and modern front-end technologies. Beyond work, I love exploring new technologies and turning ideas into reality through personal projects.
+I specialize in full-stack development using technologies like React, Next.js, Node.js, and TypeScript, and I’m actively exploring the world of blockchain and AI. From dynamic web apps to smart contract integration and intelligent systems, I enjoy turning ideas into real-world applications.
 
-One of my key projects, [ZaDark](https://zadark.com), enhances the Zalo experience on PC and Web, surpassing 80,000 downloads on [SourceForge](https://sourceforge.net/projects/zadark) and 15,000 active users on the [Chrome Web Store](https://chromewebstore.google.com/detail/llfhpkkeljlgnjgkholeppfnepmjppob) since 2022.
-
-Let's connect and collaborate!
+Let’s connect and create something awesome!
   `,
-  avatar: "https://assets.chanhdai.com/images/chanhdai-avatar-ghibli.jpeg",
-  ogImage: "https://assets.chanhdai.com/images/screenshot-og-image-dark.png",
+  avatar:
+    "https://raw.githubusercontent.com/singhaditya73/Blogging-app/main/QxVk9IG7_400x400.jpg", // Replace with your image URL
   keywords:
-    "ncdai, nguyenchanhdai, nguyen chanh dai, chanhdai, chanh dai, iamncdai, quaric, zadark, nguyễn chánh đại, chánh đại",
-  dateCreated: "2023-10-20", // YYYY-MM-DD
+    "aditya singh, adityasingh, full-stack developer, web3 developer, AI ML, react developer, nextjs portfolio",
+  dateCreated: "2025-06-16",
 };
