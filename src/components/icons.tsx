@@ -76,12 +76,6 @@ export const Icons = {
       />
     </svg>
   ),
-  prisma: (props: IconProps) => (
-    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-      <rect x="3" y="6" width="18" height="12" rx="2" />
-      <path d="M7 10h10M7 14h10" stroke="white" strokeWidth="1" fill="none" />
-    </svg>
-  ),
   solidity: (props: IconProps) => (
     <svg viewBox="0 0 24 24" {...props}>
       <path

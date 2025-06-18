@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import VCard from "vcard-creator";
 
 import { USER } from "@/data/user";
-import { decodeEmail, decodePhoneNumber } from "@/utils/string";
+import { decodeEmail } from "@/utils/string";
 
 export const dynamic = "force-static";
 
@@ -11,7 +11,6 @@ export async function GET() {
 
   card
     .addName(USER.lastName, USER.firstName)
-    .addPhoneNumber(decodePhoneNumber(USER.phoneNumber))
     .addAddress(USER.address)
     .addEmail(decodeEmail(USER.email))
     .addURL(USER.website);

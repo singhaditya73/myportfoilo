@@ -21,14 +21,23 @@ export function Brand() {
           )}
         >
           <div className="grid grid-cols-[2rem_1fr]">
-            <div className="flex h-50 items-center justify-center border-r border-edge bg-background">
+            <div className="flex h-20 items-center justify-center border-r border-edge bg-background">
               <span className="-rotate-90 font-mono text-sm text-muted-foreground select-none">
                 Hey..!
               </span>
             </div>
 
-            <div className="screen-line-after flex items-center justify-center pr-8 after:z-1">
-              <ChanhDaiWordmark className="h-6 w-auto sm:h-10" />
+            <div className="screen-line-after flex items-center justify-center pr-10 after:z-1">
+              <p className="mb-1.9 text-center font-mono text-sm text-balance text-muted-foreground">
+                <a
+                  className="link"
+                  href="https://drive.google.com/file/d/1aiTnlXwoex3FCgnT67eUKrWolgMgNTT5/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  View Resume
+                </a>
+              </p>
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import Image from "next/image";
 import React from "react";
 
@@ -6,6 +7,31 @@ import { cn } from "@/lib/utils";
 
 import { TECH_STACK } from "../data/tech-stack";
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "./panel";
+
+// ✅ Full map of unhosted icons using Iconify icon names (from simple-icons set)
+const UNHOSTED_ICONS: Record<string, string> = {
+  prisma: "simple-icons:prisma",
+  solidity: "simple-icons:solidity",
+  cplusplus: "simple-icons:cplusplus",
+  c: "simple-icons:c",
+  mysql: "simple-icons:mysql",
+  express: "simple-icons:express",
+  cloudflareworkers: "simple-icons:cloudflare",
+  axios: "simple-icons:axios",
+  react: "simple-icons:react",
+  html5: "simple-icons:html5",
+  css3: "simple-icons:css3",
+  json: "simple-icons:json",
+  numpy: "simple-icons:numpy",
+  pandas: "simple-icons:pandas",
+  scikitlearn: "simple-icons:scikitlearn",
+  tensorflow: "simple-icons:tensorflow",
+  visualstudiocode: "simple-icons:visualstudiocode",
+  postman: "simple-icons:postman",
+  git: "simple-icons:git",
+  github: "simple-icons:github",
+  // hono and zod are not available in simple-icons yet
+};
 
 export function TeckStack() {
   return (
@@ -21,8 +47,31 @@ export function TeckStack() {
           "bg-zinc-950/0.75 dark:bg-white/0.75"
         )}
       >
-        <div className="flex flex-wrap gap-4 select-none">
+        <div className="flex flex-wrap gap-6 select-none">
           {TECH_STACK.map((item) => {
+            // Render from Iconify for unhosted icons
+            if (item.isHosted === false) {
+              const iconName = UNHOSTED_ICONS[item.key];
+
+              return (
+                <SimpleTooltip key={item.key} content={item.title}>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={item.title}
+                  >
+                    {iconName ? (
+                      <Icon icon={iconName} width={32} height={32} />
+                    ) : (
+                      <span className="text-gray-400">No icon</span>
+                    )}
+                  </a>
+                </SimpleTooltip>
+              );
+            }
+
+            // Render hosted icons
             return (
               <SimpleTooltip key={item.key} content={item.title}>
                 <a

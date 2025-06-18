@@ -2,6 +2,20 @@ import type { TechStack } from "../types/tech-stack";
 
 export const TECH_STACK: TechStack[] = [
   {
+    key: "cplusplus",
+    title: "C++",
+    href: "https://cplusplus.com/",
+    categories: ["Language"],
+    isHosted: false,
+  },
+  {
+    key: "c",
+    title: "C",
+    href: "https://www.iso.org/standard/74528.html",
+    categories: ["Language"],
+    isHosted: false,
+  },
+  {
     key: "typescript",
     title: "TypeScript",
     href: "https://www.typescriptlang.org/",
@@ -21,16 +35,24 @@ export const TECH_STACK: TechStack[] = [
   },
   {
     key: "solidity",
-    title: "solidity",
-    href: "https://www.prisma.io/",
+    title: "Solidity",
+    href: "https://soliditylang.org/",
     categories: ["Language"],
-    theme: true,
+    isHosted: false,
   },
   {
-    key: "java",
-    title: "Java",
-    href: "https://www.java.com/",
-    categories: ["Language"],
+    key: "html5",
+    title: "HTML5",
+    href: "https://html.spec.whatwg.org/",
+    categories: ["Frontend"],
+    isHosted: false,
+  },
+  {
+    key: "css3",
+    title: "CSS",
+    href: "https://www.w3.org/Style/CSS/",
+    categories: ["Frontend"],
+    isHosted: false,
   },
   {
     key: "nodejs",
@@ -106,7 +128,14 @@ export const TECH_STACK: TechStack[] = [
     href: "https://www.mongodb.com/",
     categories: ["Database"],
   },
-
+  {
+    key: "prisma",
+    title: "Prisma",
+    href: "https://www.prisma.io/",
+    categories: ["Database"],
+    theme: true,
+    isHosted: false,
+  },
   {
     key: "chatgpt",
     title: "ChatGPT",
@@ -115,10 +144,31 @@ export const TECH_STACK: TechStack[] = [
     theme: true,
   },
   {
-    key: "prisma",
-    title: "Prisma",
-    href: "https://www.prisma.io/",
-    categories: ["Database"],
-    theme: true,
+    key: "numpy",
+    title: "NumPy",
+    href: "https://numpy.org/",
+    categories: ["Machine Learning"],
+    isHosted: false,
+  },
+  {
+    key: "pandas",
+    title: "Pandas",
+    href: "https://pandas.pydata.org/",
+    categories: ["Machine Learning"],
+    isHosted: false,
+  },
+  {
+    key: "scikitlearn",
+    title: "Scikit-learn",
+    href: "https://scikit-learn.org/",
+    categories: ["Machine Learning"],
+    isHosted: false,
+  },
+  {
+    key: "tensorflow",
+    title: "TensorFlow",
+    href: "https://www.tensorflow.org/",
+    categories: ["Machine Learning"],
+    isHosted: false,
   },
 ];
