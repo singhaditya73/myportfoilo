@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { CommandMenu } from "@/components/command-menu";
-import { DesktopNav } from "@/components/desktop-nav";
 import { MobileNav } from "@/components/mobile-nav";
 import { NavItemGitHub } from "@/components/nav-item-github";
 import { ToggleTheme } from "@/components/toggle-theme";
@@ -39,9 +38,7 @@ export const SiteHeader = () => {
 
           <div className="flex-1" />
 
-          <DesktopNav items={MAIN_NAV} />
-
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <CommandMenu posts={posts} />
             <NavItemGitHub />
             <ToggleTheme />
