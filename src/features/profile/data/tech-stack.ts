@@ -20,6 +20,13 @@ export const TECH_STACK: TechStack[] = [
     categories: ["Language"],
   },
   {
+    key: "solidity",
+    title: "solidity",
+    href: "https://www.prisma.io/",
+    categories: ["Language"],
+    theme: true,
+  },
+  {
     key: "java",
     title: "Java",
     href: "https://www.java.com/",
@@ -111,7 +118,7 @@ export const TECH_STACK: TechStack[] = [
     key: "prisma",
     title: "Prisma",
     href: "https://www.prisma.io/",
-    categories: ["Database", "ORM"],
+    categories: ["Database"],
     theme: true,
   },
 ];
