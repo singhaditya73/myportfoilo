@@ -6,14 +6,20 @@ import {
   BriefcaseBusinessIcon,
   CircleUserIcon,
   CornerDownLeftIcon,
+  DownloadIcon,
   LetterTextIcon,
   MoonStarIcon,
+  RssIcon,
   SunIcon,
+  TextIcon,
+  TriangleDashedIcon,
+  TypeIcon,
 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { toast } from "sonner";
 
 import {
   CommandDialog,
@@ -26,10 +32,14 @@ import {
 } from "@/components/ui/command";
 import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
 import { cn } from "@/lib/utils";
+import type { Post } from "@/types/blog";
+import { copyText } from "@/utils/copy";
 
-import { ChanhDaiMark } from "./chanhdai-mark";
+import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark";
+import { getWordmarkSVG } from "./chanhdai-wordmark";
 import { Icons } from "./icons";
 import { Button } from "./ui/button";
+import { Separator } from "./ui/separator";
 
 type CommandLinkItem = {
   title: string;
@@ -41,7 +51,23 @@ type CommandLinkItem = {
   openInNewTab?: boolean;
 };
 
-const MENU_LINKS: CommandLinkItem[] = [];
+const MENU_LINKS: CommandLinkItem[] = [
+  {
+    title: "Daifolio",
+    href: "/",
+    icon: ChanhDaiMark,
+  },
+  {
+    title: "Blog",
+    href: "/blog",
+    icon: RssIcon,
+  },
+  {
+    title: "Components",
+    href: "/components",
+    icon: Icons.react,
+  },
+];
 
 const DAIFOLIO_LINKS: CommandLinkItem[] = [
   {
@@ -88,10 +114,10 @@ const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
   openInNewTab: true,
 }));
 
-export function CommandMenu() {
+export function CommandMenu({ posts }: { posts: Post[] }) {
   const router = useRouter();
 
-  const { setTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
 
   const [open, setOpen] = useState(false);
 
@@ -135,12 +161,30 @@ export function CommandMenu() {
     [router]
   );
 
+  const handleCopyText = useCallback((text: string, message: string) => {
+    setOpen(false);
+    copyText(text);
+    toast.success(message);
+  }, []);
+
   const handleThemeChange = useCallback(
     (theme: "light" | "dark" | "system") => {
       setOpen(false);
       setTheme(theme);
     },
     [setTheme]
+  );
+
+  const { blogLinks, componentLinks } = useMemo(
+    () => ({
+      blogLinks: posts
+        .filter((post) => post.metadata?.category !== "components")
+        .map(postToCommandLinkItem),
+      componentLinks: posts
+        .filter((post) => post.metadata?.category === "components")
+        .map(postToCommandLinkItem),
+    }),
+    [posts]
   );
 
   return (
@@ -168,15 +212,12 @@ export function CommandMenu() {
           Search
         </span>
 
-        <span className="max-sm:hidden">
-          <kbd className="hidden h-4 items-center rounded-sm bg-black/5 px-1 font-sans text-[13px]/4 font-normal tracking-wider in-[.os-macos]:flex dark:bg-white/10">
-            ⌘K
-          </kbd>
-
-          <kbd className="hidden h-4 items-center rounded-sm bg-black/5 px-1 font-sans text-[13px]/4 not-[.os-macos_&]:flex dark:bg-white/10">
-            Ctrl K
-          </kbd>
-        </span>
+        <CommandMenuKbd className="hidden tracking-wider sm:in-[.os-macos_&]:flex">
+          ⌘K
+        </CommandMenuKbd>
+        <CommandMenuKbd className="hidden sm:not-[.os-macos_&]:flex">
+          Ctrl K
+        </CommandMenuKbd>
       </Button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
@@ -202,10 +243,70 @@ export function CommandMenu() {
           <CommandSeparator />
 
           <CommandLinkGroup
+            heading="Blog"
+            links={blogLinks}
+            fallbackIcon={TextIcon}
+            onLinkSelect={handleOpenLink}
+          />
+
+          <CommandSeparator />
+
+          <CommandLinkGroup
+            heading="Components"
+            links={componentLinks}
+            fallbackIcon={Icons.react}
+            onLinkSelect={handleOpenLink}
+          />
+
+          <CommandSeparator />
+
+          <CommandLinkGroup
             heading="Social Links"
             links={SOCIAL_LINK_ITEMS}
             onLinkSelect={handleOpenLink}
           />
+
+          <CommandSeparator />
+
+          <CommandGroup heading="Brand Assets">
+            <CommandItem
+              onSelect={() => {
+                handleCopyText(
+                  getMarkSVG(resolvedTheme === "light" ? "#000" : "#fff"),
+                  "Copied Mark as SVG"
+                );
+              }}
+            >
+              <ChanhDaiMark />
+              Copy Mark as SVG
+            </CommandItem>
+
+            <CommandItem
+              onSelect={() => {
+                handleCopyText(
+                  getWordmarkSVG(resolvedTheme === "light" ? "#000" : "#fff"),
+                  "Copied Logotype as SVG"
+                );
+              }}
+            >
+              <TypeIcon />
+              Copy Logotype as SVG
+            </CommandItem>
+
+            <CommandItem
+              onSelect={() => handleOpenLink("/blog/chanhdai-brand")}
+            >
+              <TriangleDashedIcon />
+              Brand Guidelines
+            </CommandItem>
+
+            <CommandItem asChild>
+              <a href="https://assets.chanhdai.com/chanhdai-brand.zip" download>
+                <DownloadIcon />
+                Download Brand Assets
+              </a>
+            </CommandItem>
+          </CommandGroup>
 
           <CommandSeparator />
 
@@ -337,13 +438,19 @@ function CommandMenuFooter() {
       <div className="flex h-10" />
 
       <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-between gap-2 border-t bg-zinc-100/30 px-4 text-xs font-medium dark:bg-zinc-800/30">
-        <ChanhDaiMark className="size-6 text-muted-foreground" />
+        <ChanhDaiMark className="size-6 text-muted-foreground" aria-hidden />
 
         <div className="flex shrink-0 items-center gap-2">
-          {ENTER_ACTION_LABELS[selectedCommandKind]}
+          <span>{ENTER_ACTION_LABELS[selectedCommandKind]}</span>
           <CommandMenuKbd>
             <CornerDownLeftIcon />
           </CommandMenuKbd>
+          <Separator
+            orientation="vertical"
+            className="data-[orientation=vertical]:h-4"
+          />
+          <span className="text-muted-foreground">Exit</span>
+          <CommandMenuKbd>Esc</CommandMenuKbd>
         </div>
       </div>
     </>
@@ -354,10 +461,20 @@ function CommandMenuKbd({ className, ...props }: React.ComponentProps<"kbd">) {
   return (
     <kbd
       className={cn(
-        "pointer-events-none flex h-5 min-w-5 items-center justify-center gap-1 rounded-sm bg-black/5 px-1 font-sans text-[0.75rem] font-medium text-muted-foreground select-none dark:bg-white/10 [&_svg:not([class*='size-'])]:size-3",
+        "pointer-events-none flex h-5 min-w-6 items-center justify-center gap-1 rounded-sm bg-black/5 px-1 font-sans text-[13px] font-normal text-muted-foreground shadow-[inset_0_-1px_2px] shadow-black/10 select-none dark:bg-white/10 dark:shadow-white/10 dark:text-shadow-xs [&_svg:not([class*='size-'])]:size-3",
         className
       )}
       {...props}
     />
   );
+}
+
+function postToCommandLinkItem(post: Post): CommandLinkItem {
+  const isComponent = post.metadata?.category === "components";
+
+  return {
+    title: post.metadata.title,
+    href: `/blog/${post.slug}${isComponent ? "?cat=components" : ""}`,
+    keywords: isComponent ? ["component"] : undefined,
+  };
 }

@@ -12,12 +12,13 @@ import { BrandContextMenu } from "./brand-context-menu";
 import { SiteHeaderMark } from "./site-header-mark";
 import { SiteHeaderWrapper } from "./site-header-wrapper";
 
-export const SiteHeader = () => {
+export function SiteHeader() {
   const posts = getAllPosts();
 
   return (
     <>
       <div className="flex h-14" />
+
       <SiteHeaderWrapper
         className={cn(
           "fixed inset-x-0 top-0 z-50 bg-background px-2 pt-2",
@@ -38,7 +39,7 @@ export const SiteHeader = () => {
 
           <div className="flex-1" />
 
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-2">
             <CommandMenu posts={posts} />
             <NavItemGitHub />
             <ToggleTheme />
@@ -48,4 +49,4 @@ export const SiteHeader = () => {
       </SiteHeaderWrapper>
     </>
   );
-};
+}
