@@ -6,7 +6,7 @@ export function SiteFooter() {
           Built by{" "}
           <a
             className="link"
-            href="https://linkedin.com/in/adityasingh73"
+            href="https://www.linkedin.com/in/aditya-singh73"
             target="_blank"
             rel="noopener"
           >
