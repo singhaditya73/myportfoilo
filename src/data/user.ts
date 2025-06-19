@@ -8,7 +8,7 @@ export const USER = {
   flipSentences: ["Full-Stack Developer", "Web3 Explorer", "AI/ML Enthusiast"],
   address: "India", // Optional: Base64-encoded phone in E.164 format, or leave empty
   email: "YWRpeXRhc2luZ2hyYWpwdXQ3NTVAZ21haWwuY29t", // Optional: Base64-encoded email, or leave empty
-  website: "https://yourdomain.com", // Replace with your actual domain
+  website: "https://adityasingh7.tech", // Replace with your actual domain
   otherWebsites: [], // Add personal blog, GitHub, etc. if any
   dateOfBirth: "2006-04-11",
   jobTitle: "Full-Stack Developer | Web3 & AI/ML Enthusiast",
