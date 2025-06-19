@@ -15,16 +15,12 @@ export const META_THEME_COLORS = {
 
 export const MAIN_NAV: NavItem[] = [
   {
-    title: "Daifolio",
+    title: "Back to Home",
     href: "/",
   },
   {
-    title: "Blog",
-    href: "/blog",
-  },
-  {
-    title: "Components",
-    href: "/components",
+    title: "Resume",
+    href: "https://drive.google.com/file/d/1aiTnlXwoex3FCgnT67eUKrWolgMgNTT5/view",
   },
 ];
 

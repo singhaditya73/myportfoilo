@@ -4,7 +4,7 @@ export const USER = {
   displayName: "Aditya Singh",
   username: "adityasingh",
   gender: "male",
-  bio: "Building the future with Web2, Web3, and AI.",
+  bio: "Building with Web2, Web3 & AI.",
   flipSentences: ["Full-Stack Developer", "Web3 Explorer", "AI/ML Enthusiast"],
   address: "India", // Optional: Base64-encoded phone in E.164 format, or leave empty
   email: "YWRpeXRhc2luZ2hyYWpwdXQ3NTVAZ21haWwuY29t", // Optional: Base64-encoded email, or leave empty
