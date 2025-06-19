@@ -3,7 +3,7 @@ import type { NavItem } from "@/types/nav";
 
 export const SITE_INFO = {
   name: USER.displayName,
-  url: process.env.APP_URL || "https://chanhdai.com",
+  url: process.env.APP_URL || "https://adityasingh7.tech",
   description: USER.bio,
   keywords: USER.keywords,
 };
@@ -31,7 +31,7 @@ export const MAIN_NAV: NavItem[] = [
 export const SOURCE_CODE_GITHUB_URL = "https://github.com/singhaditya73";
 
 export const UTM_PARAMS = {
-  utm_source: "chanhdai.com",
+  utm_source: "adityasingh7.tech",
   utm_medium: "portfolio_website",
   utm_campaign: "referral",
 };

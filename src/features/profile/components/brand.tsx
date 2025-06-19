@@ -1,5 +1,4 @@
 import { BrandContextMenu } from "@/components/brand-context-menu";
-import { ChanhDaiWordmark } from "@/components/chanhdai-wordmark";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
