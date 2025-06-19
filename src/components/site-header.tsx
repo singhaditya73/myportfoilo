@@ -5,7 +5,6 @@ import { MobileNav } from "@/components/mobile-nav";
 import { NavItemGitHub } from "@/components/nav-item-github";
 import { ToggleTheme } from "@/components/toggle-theme";
 import { MAIN_NAV } from "@/config/site";
-import { getAllPosts } from "@/data/blog";
 import { cn } from "@/lib/utils";
 
 import { BrandContextMenu } from "./brand-context-menu";
@@ -13,8 +12,6 @@ import { SiteHeaderMark } from "./site-header-mark";
 import { SiteHeaderWrapper } from "./site-header-wrapper";
 
 export function SiteHeader() {
-  const posts = getAllPosts();
-
   return (
     <>
       <div className="flex h-7" />
@@ -40,7 +37,7 @@ export function SiteHeader() {
           <div className="flex-1" />
 
           <div className="flex items-center gap-2">
-            <CommandMenu posts={posts} />
+            <CommandMenu />
             <NavItemGitHub />
             <ToggleTheme />
             <MobileNav className="sm:hidden" items={MAIN_NAV} />
