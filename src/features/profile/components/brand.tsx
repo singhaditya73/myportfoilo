@@ -30,7 +30,7 @@ export function Brand() {
               <p className="mb-1.9 text-center font-mono text-sm text-balance text-muted-foreground">
                 <a
                   className="link"
-                  href="https://drive.google.com/file/d/1aiTnlXwoex3FCgnT67eUKrWolgMgNTT5/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1X0G5mY079qBsfVek_tw8syVxdMq48Phs/view?usp=drive_link"
                   target="_blank"
                   rel="noopener"
                 >
