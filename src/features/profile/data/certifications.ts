@@ -73,6 +73,6 @@ export const CERTIFICATIONS: Certification[] = [
     issueDate: "2025-02-26",
     credentialID: "dashboard-app-47463-1745633258744",
     credentialURL:
-      "https://nextjs.org/learn/certificate?course=dashboard-app&user=47463&certId=dashboard-app-47463-1745633258744",
+      "https://drive.google.com/file/d/14KLY1_aZh8XXvc877xUoyjljum0_Dk-D/view?usp=drive_link",
   },
 ];
