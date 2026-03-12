@@ -50,7 +50,6 @@ function CommandDialog({
           "bg-popover backdrop-blur-lg supports-backdrop-filter:bg-popover/90"
         )}
         data-slot="command-dialog-content"
-        overlay={false}
       >
         <Command
           className={cn(
