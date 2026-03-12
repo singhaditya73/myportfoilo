@@ -26,7 +26,7 @@ export function Awards() {
       <AccordionPrimitive.Root type="multiple">
         <CollapsibleList
           items={SORTED_AWARDS}
-          max={8}
+          max={5}
           keyExtractor={(item) => item.id}
           renderItem={(item) => <AwardItem award={item} />}
         />

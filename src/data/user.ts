@@ -21,10 +21,7 @@ export const USER = {
     // Add more jobs or internships if applicable
   ],
   about: `
-Hello, World! I'm Aditya Singh — a Software Developer driven by building impactful solutions across Web2, Web3, and AI/ML with clean code and thoughtful design.
-
-I'm an active open source contributor at **Palisadoes Foundation**, **Zulip**, and **Google's Gemini CLI** — working on everything from MinIO-based file management and real-time messaging to AI agent tooling. I specialize in full-stack development with React, Next.js, Node.js, and TypeScript, and I'm deeply exploring AI/ML (RAG, LLM fine-tuning, PyTorch) and blockchain (Solidity).
-
+Hi, I’m Aditya Singh, a Full-Stack Developer and AI Engineer building systems with LLMs, NLP, and scalable backend architectures. My work focuses on RAG systems, AI agents, and real-time intelligent applications. I enjoy turning ideas into working products and contributing to open source at Palisadoes Foundation, Zulip, and Google’s Gemini CLI.
   `,
   avatar:
     "https://raw.githubusercontent.com/singhaditya73/Blogging-app/main/QxVk9IG7_400x400.jpg", // Replace with your image URL

@@ -1,10 +1,11 @@
 import dayjs from "dayjs";
 import type { ProfilePage as PageSchema, WithContext } from "schema-dts";
 
+import { GithubCalendarSection } from "@/components/github-calendar-section";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { USER } from "@/data/user";
 import { About } from "@/features/profile/components/about";
 import { Awards } from "@/features/profile/components/awards";
-import { Brand } from "@/features/profile/components/brand";
 import { Certifications } from "@/features/profile/components/certifications";
 import { Experiences } from "@/features/profile/components/experiences";
 import { Overview } from "@/features/profile/components/overview";
@@ -30,31 +31,49 @@ export default function Page() {
         <ProfileHeader />
         <Separator />
 
-        <Overview />
+        <ScrollReveal delay={0.1}>
+          <Overview />
+        </ScrollReveal>
         <Separator />
 
-        <SocialLinks />
+        <ScrollReveal delay={0.2}>
+          <SocialLinks />
+        </ScrollReveal>
         <Separator />
 
-        <About />
+        <ScrollReveal delay={0.3}>
+          <About />
+        </ScrollReveal>
         <Separator />
 
-        <TeckStack />
+        <ScrollReveal delay={0.4}>
+          <TeckStack />
+        </ScrollReveal>
         <Separator />
 
-        <Experiences />
+        <ScrollReveal delay={0.1}>
+          <Experiences />
+        </ScrollReveal>
         <Separator />
 
-        <Projects />
+        <ScrollReveal delay={0.1}>
+          <Projects />
+        </ScrollReveal>
         <Separator />
 
-        <Awards />
+        <ScrollReveal delay={0.1}>
+          <Awards />
+        </ScrollReveal>
         <Separator />
 
-        <Certifications />
+        <ScrollReveal delay={0.1}>
+          <Certifications />
+        </ScrollReveal>
         <Separator />
 
-        <Brand />
+        <ScrollReveal delay={0.2}>
+          <GithubCalendarSection />
+        </ScrollReveal>
         <Separator />
       </div>
     </>

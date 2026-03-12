@@ -6,7 +6,7 @@ import { ExperiencePositionItem } from "./experience-position-item";
 
 export function ExperienceItem({ experience }: { experience: Experience }) {
   return (
-    <div className="screen-line-after -mx-2 space-y-4 rounded-lg px-2 py-4 transition-colors duration-200 hover:bg-muted/30">
+    <div className="screen-line-after -mx-2 space-y-4 rounded-lg px-2 py-4">
       <div className="flex items-center gap-3">
         <span className="flex size-6 shrink-0 items-center justify-center">
           {experience.companyLogo ? (

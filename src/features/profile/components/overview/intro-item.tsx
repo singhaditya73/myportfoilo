@@ -4,10 +4,14 @@ export function IntroItem({
   icon: Icon,
   content,
   href,
+  onClick,
+  className,
 }: {
   icon: React.ComponentType<LucideProps>;
   content: React.ReactNode;
   href?: string;
+  onClick?: () => void;
+  className?: string;
 }) {
   return (
     <div className="flex items-center gap-4 font-mono text-sm">
@@ -19,9 +23,16 @@ export function IntroItem({
       </span>
 
       <p className="text-balance">
-        {href ? (
+        {onClick ? (
+          <button
+            onClick={onClick}
+            className={`decoration-ring underline-offset-4 hover:underline ${className || ""}`}
+          >
+            {content}
+          </button>
+        ) : href ? (
           <a
-            className="decoration-ring underline-offset-4 hover:underline"
+            className={`decoration-ring underline-offset-4 hover:underline ${className || ""}`}
             href={href}
             target="_blank"
             rel="noopener noreferrer"
@@ -29,7 +40,7 @@ export function IntroItem({
             {content}
           </a>
         ) : (
-          content
+          <span className={className}>{content}</span>
         )}
       </p>
     </div>

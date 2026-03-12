@@ -38,11 +38,7 @@ function PanelTitle({
   return (
     <Comp
       data-slot="panel-title"
-      className={cn(
-        "relative pb-2 font-heading text-3xl font-semibold",
-        "after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-12 after:rounded-full after:bg-gradient-to-r after:from-blue-500 after:to-purple-500",
-        className
-      )}
+      className={cn("font-heading text-3xl font-semibold", className)}
       {...props}
     />
   );

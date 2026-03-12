@@ -3,8 +3,8 @@ import Image from "next/image";
 import { SimpleTooltip } from "@/components/ui/tooltip";
 import { USER } from "@/data/user";
 import { cn } from "@/lib/utils";
-import { FlipSentences } from "@/registry/flip-sentences";
 
+import { AgeCounter } from "./age-counter";
 import { VerifiedIcon } from "./verified-icon";
 
 export function ProfileHeader() {
@@ -61,8 +61,10 @@ export function ProfileHeader() {
             </SimpleTooltip>
           </h1>
 
-          <div className="h-12 border-t border-edge py-1 pl-4 sm:h-auto">
-            <FlipSentences sentences={[USER.bio, ...USER.flipSentences]} />
+          <div className="flex min-h-12 items-center border-t border-edge py-2 pl-4 sm:h-auto">
+            <p className="font-mono text-sm text-muted-foreground">
+              been here for <AgeCounter /> years
+            </p>
           </div>
         </div>
       </div>

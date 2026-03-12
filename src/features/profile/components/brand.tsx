@@ -1,15 +1,11 @@
 import { BrandContextMenu } from "@/components/brand-context-menu";
 import { cn } from "@/lib/utils";
 
-import { Panel, PanelHeader, PanelTitle } from "./panel";
+import { Panel } from "./panel";
 
 export function Brand() {
   return (
     <Panel>
-      <PanelHeader>
-        <PanelTitle></PanelTitle>
-      </PanelHeader>
-
       <BrandContextMenu>
         <div
           className={cn(
@@ -28,9 +24,7 @@ export function Brand() {
             <div className="screen-line-after flex items-center justify-center pr-10 after:z-1">
               <p className="mb-1.5 text-center font-mono text-sm text-balance text-muted-foreground">
                 Let&apos;s build something{" "}
-                <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text font-semibold text-transparent">
-                  amazing
-                </span>{" "}
+                <span className="font-semibold text-blue-500">amazing</span>{" "}
                 together 🚀
               </p>
             </div>
